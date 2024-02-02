@@ -13,7 +13,7 @@ export default function DeleteBook(){
 
     const handleDeleteBook=()=>{
         setLoading(true)
-        axios.delete(`http://localhost:4000/delete/${id}`)
+        axios.delete(`https://bookstore-restfulapi.onrender.com/delete/${id}`)
         .then(()=>{
             setLoading(false)
             

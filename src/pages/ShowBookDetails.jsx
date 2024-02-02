@@ -17,7 +17,7 @@ export default function ShowBookDetails(){
 
     useEffect(()=>{
         setLoading(true)
-        axios.get(`http://localhost:4000/items/${id}`)
+        axios.get(`https://bookstore-restfulapi.onrender.com/items/${id}`)
         .then((res)=>{
             setBooks(res.data)
             setTimeout(() => {

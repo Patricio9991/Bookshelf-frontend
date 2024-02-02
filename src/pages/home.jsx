@@ -17,7 +17,7 @@ export default function Home() {
   useEffect(() => {
     setLoading(true);
     axios
-      .get("http://localhost:4000/items")
+      .get("https://bookstore-restfulapi.onrender.com/items")
       .then((res) => {
         setBooks(res.data);
         setLoading(false);

@@ -33,7 +33,7 @@ export default function NewBook(){
 
         console.log(...savedData)
 
-        axios.post('http://localhost:4000/new',savedData)
+        axios.post('https://bookstore-restfulapi.onrender.com/new',savedData)
          .then(()=>{
                  setLoading(false)  
                  navigate('/')

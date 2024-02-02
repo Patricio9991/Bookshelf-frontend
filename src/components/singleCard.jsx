@@ -33,7 +33,7 @@ export default function SingleCard({book}){
                 <div className="flex justify-between items-center gap-x-2">
                     <PiBookOpenTextLight className="text-red-400 text-2xl"/>
                     <h2 className="my-1">{book.title}</h2>
-                    <img className="w-[100px] h-[130px] self-auto" src={`http://localhost:4000/${book.img}`} alt={book.title}/> {/**Poner como src la direccion del servidor donde este alojada la imagen */}
+                    <img className="w-[100px] h-[130px] self-auto" src={`https://bookstore-restfulapi.onrender.com/${book.img}`} alt={book.title}/> {/**Poner como src la direccion del servidor donde este alojada la imagen */}
 
                 </div>
                 <div className="flex justify-start items-center gap-x-2">
