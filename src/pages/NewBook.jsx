@@ -22,6 +22,7 @@ export default function NewBook(){
     
     const handleUploadData=(e)=>{
 
+       
         
         e.preventDefault()
         const savedData=new FormData()
@@ -32,7 +33,17 @@ export default function NewBook(){
         savedData.append("info",info)
         savedData.append("file",file)
 
+        const flagImg=savedData.get('file')
+
+        if(flagImg==='undefined'){
+            console.log('flagImg esta en undefined, va a dar error')
+            savedData.delete('file')
+        }
         console.log(...savedData)
+
+
+
+        //https://bookstore-restfulapi.onrender.com/new
 
         axios.post('https://bookstore-restfulapi.onrender.com/new',savedData)
          .then(()=>{
