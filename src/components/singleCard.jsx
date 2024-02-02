@@ -8,14 +8,11 @@ import {MdOutlineAddBox,MdOutlineDelete} from 'react-icons/md'
 import { useState } from "react"
 import ModalSinopsis from "../components/modalSinopsis"
 
-export default function SingleCard({book}){
+export default function SingleCard({book,setBookID}){
 
     const [modal,setModal]=useState(false)
 
 
-
-
-    
 
     return(
         <div>
@@ -53,7 +50,7 @@ export default function SingleCard({book}){
                             <AiOutlineEdit className="text-2xl text-yellow-600"/>
                         </Link>
                         <Link to={`/book/delete/${book._id}`}>
-                            <MdOutlineDelete className="text-2xl text-red-600"/>
+                            <MdOutlineDelete className="text-2xl text-red-600" />
                         </Link>
                 </div>
                 

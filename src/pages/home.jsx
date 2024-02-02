@@ -13,6 +13,7 @@ export default function Home() {
   const [books, setBooks] = useState([]);
   const [loading, setLoading] = useState(false);
   const [mode, setMode] = useState("");
+  
 
   useEffect(() => {
     setLoading(true);
@@ -27,6 +28,9 @@ export default function Home() {
         setLoading(false);
       });
   }, []);
+
+
+  
          
   return (
     <div className="p-4">
@@ -60,9 +64,9 @@ export default function Home() {
       {loading ? (
         <Spinner />
       ) : mode === "CardMode" ? (
-        <Card books={books} />
+        <Card books={books}/>
       ) : (
-        <List books={books} />
+        <List books={books}/>
       )}
     </div>
   );

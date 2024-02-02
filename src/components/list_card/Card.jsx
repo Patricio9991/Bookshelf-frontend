@@ -11,11 +11,13 @@ import SingleCard from "../singleCard"
 
 export default function Card({books}){
 
+    const [bookID,setBookID]=useState('')
+
     return(
         <div className="grid grid-cols-3">
             {books.map((i)=>{ 
 
-                return <SingleCard book={i}/>
+                return <SingleCard book={i} setBookID={setBookID}/>
             })}
         </div>
      

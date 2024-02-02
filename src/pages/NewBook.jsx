@@ -21,6 +21,7 @@ export default function NewBook(){
 
     
     const handleUploadData=(e)=>{
+
         
         e.preventDefault()
         const savedData=new FormData()
@@ -35,16 +36,15 @@ export default function NewBook(){
 
         axios.post('https://bookstore-restfulapi.onrender.com/new',savedData)
          .then(()=>{
-                 setLoading(false)  
+                  
                  navigate('/')
-               
-         })
+            })
          .catch((err)=>{
              console.log(err)
-             setLoading(false)
+             setLoading(true)
          })
 
-
+        setLoading(true) 
     }
 
     // const handleSaveBook=()=>{
@@ -77,9 +77,9 @@ export default function NewBook(){
         <div className="p-4">
             <BackBTN/>
             <h1 className="text-3xl my-4">Create Book</h1>
-            {loading ? <Spinner/> : ""}
+            {loading ? <Spinner/> : (
             <div className="flex flex-col border-2  border-sky-400 rounded-xl w-[600px] p-4 mx-auto">
-                <form className="my-4" onSubmit={(e)=>{handleUploadData(e);}}>
+                <form className="my-4" onSubmit={(e)=>{handleUploadData(e)}}>
                     <label className="text-xl text-gray-500 mr-4">Title</label>
                     <input
                         type="text"
@@ -115,13 +115,9 @@ export default function NewBook(){
             
                     <input type="file" name="file" onChange={(e)=>{setFile(e.target.files[0])}}/>
 
-                    <input
-                    
-                    type="submit"
-                    className="my-2 p-3 bg-sky-300 w-full"
-                    ></input>
+                    <input type="submit"className="my-2 p-3 bg-sky-300 w-full cursor-pointer hover:bg-sky-900"></input>
                 </form>
-            </div>
+            </div>) }
         </div>
     )
 }
